@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import crypto from 'crypto';
+import { loremIpsum } from "lorem-ipsum";
 
 const Post = (props) => {
     const { slug, cards } = props;
@@ -56,7 +57,7 @@ export async function getServerSideProps(context) {
         return {
             destination: id,
             title: `Go visit ${id}`,
-            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id nisi et felis pulvinar laoreet a sed orci.',
+            content: loremIpsum({count: 100, units: 'words'}),
         };
     });
 
