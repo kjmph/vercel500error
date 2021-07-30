@@ -51,7 +51,7 @@ const Post = (props) => {
 export async function getServerSideProps(context) {
     const { slug = '' } = context.params;
 
-    const cards = [...Array(500)].map(c => {
+    const cards = [...Array(5000)].map(c => {
         const id = crypto.randomBytes(9).toString('hex');
         return {
             destination: id,
